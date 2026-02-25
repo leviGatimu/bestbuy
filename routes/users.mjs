@@ -1,32 +1,18 @@
 import express from 'express';
+import { 
+    getAllUsers, 
+    getUserById, 
+    createUser, 
+    updateUser, 
+    deleteUser 
+} from '../controllers/usercontroller.mjs';
 
 const router = express.Router();
-const users = [
-  {
-    id: 1,
-    name: "John Doe",
-    email: "john@example.com",
-    role: "customer",
-    cart: []
-  },
-  {
-    id: 2,
-    name: "Sarah Kim",
-    email: "sarah@example.com",
-    role: "customer",
-    cart: []
-  },
-  {
-    id: 3,
-    name: "Michael Store",
-    email: "admin@bestbuy.com",
-    role: "admin",
-    cart: []
-  }
-];
 
-router.get('/', (req, res) => {
-    res.send(users);
-});
+router.get('/', getAllUsers);
+router.get('/:id', getUserById);
+router.post('/', createUser);
+router.put('/:id', updateUser);
+router.delete('/:id', deleteUser);
 
 export default router;
