@@ -2,13 +2,8 @@ import User from '../models/user.js';
 
 // GET all users
 export const getAllUsers = async (req, res) => {
-    try {
-        const users = await User.find();
-        res.json(users);
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
-};
+    
+}
 
 // GET single user
 export const getUserById = async (req, res) => {
