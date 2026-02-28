@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
         type : String,
     },
 },{
-    timestamp: true
+    timestamps: true
 });
 
 const user = mongoose.Schema("user". userSchema);
