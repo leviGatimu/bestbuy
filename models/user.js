@@ -8,11 +8,14 @@ const userSchema = new mongoose.Schema ({
         type : Number
     },
     email : {
-        type : String
+        type : String,
+        unique: true,
     },
     password : {
         type : Number
     }
+},{
+    timestamps: true
 });
 
 const User = mongoose.model("User", userSchema);
