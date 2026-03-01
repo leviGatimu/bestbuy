@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import userRoutes from './routes/users.mjs';
+import productsRoutes from './routes/products.js';
 import connectDB from './config/db.mjs';
 import { userData } from 'three/tsl';
 
@@ -10,7 +11,9 @@ const app = express();
 const PORT = 3000;
 
 app.use('/users', userRoutes);
+app.use('/users', productsRoutes);
 app.use(bodyParser.json());
+
 
 app.get('/', (req, res)=> {
   res.send("Hello from homepage");
