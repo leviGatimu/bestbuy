@@ -1,6 +1,7 @@
-import mongoose from "mongoose";
+import { type } from 'firebase/firestore/pipelines';
+import mongoose from 'mongoose';
 
-const userSchema = new mongoose.Schema ({
+const userSchema = mongoose.Schema ({
     name : {
         type : String
     },
@@ -8,15 +9,18 @@ const userSchema = new mongoose.Schema ({
         type : Number
     },
     email : {
-        type : String
+        type : String ,
+        unique: true
     },
     password : {
-        type : Number
+     type : String,
+     required: true
     }
 },{
     timestamps: true
 });
 
 const User = mongoose.model("User", userSchema);
+
 
 export default User;
