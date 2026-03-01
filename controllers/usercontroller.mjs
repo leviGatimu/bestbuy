@@ -12,7 +12,7 @@ export const createUser = async(req, res) => {
         res.json(user);
     }catch(err){
         console.log(err);
-        process.exit(1);
+        res.status(500).json({error: err.message});
     }
 }
 
@@ -22,7 +22,7 @@ export const getAllUsers = async (req, res) => {
         res.json(user);
     }catch(err){
         console.log(err);
-        process.exit(1);
+        res.status(500).json({error: err.message});
     }
 }
 export const getUserByID = async (req, res) => {
@@ -32,7 +32,7 @@ export const getUserByID = async (req, res) => {
         res.json(user);
     }catch(err){
         console.log(err);
-        process.exit(1);
+        res.status(500).json({error: err.message});
     }
 }
 
@@ -43,7 +43,7 @@ export const updateUser = async(req, res) => {
         res.json(user);
     }catch(err){
         console.log(err);
-        process.exit(1);
+        res.status(500).json({error: err.message});
     }
 }
 
@@ -54,6 +54,6 @@ export const deleteUser = async (req, res) => {
         res.json({message : "User deleted succesfully."});
     }catch(err){
     console.log(err);
-    process.exit(1);    
+     res.status(500).json({error: err.message});   
     }
 }
