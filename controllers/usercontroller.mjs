@@ -1,4 +1,3 @@
-import e from 'express';
 import User from '../models/user.js';
 //CRUD: 
 // Create (post) : No ID needed
