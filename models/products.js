@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 const productSchema = new mongoose.Schema ({
     name : {
         type : String,
-        trim : true
+        trim : true,
+        default: ""
     },
     description : {
         type : String,
@@ -11,11 +12,12 @@ const productSchema = new mongoose.Schema ({
    },
    price : {
     type : Number , 
-
+    default : 0,
     min : 0, 
    },
    catgeory : {
     type : String,
+    default: ""
 
    },
    stock : {
