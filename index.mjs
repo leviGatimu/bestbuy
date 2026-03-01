@@ -1,10 +1,9 @@
 import dotenv from "dotenv";
-dotenv.config();
 import express from 'express';
 import bodyParser from 'body-parser';
 import userRoutes from './routes/users.mjs';
 
-
+dotenv.config();
 const app = express();
 const PORT = 3000;
 
