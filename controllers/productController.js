@@ -1,0 +1,56 @@
+import Product from '../controllers/productController';
+
+//1. Get all products
+//2. Get all products by ID
+//3. Create a product
+//4. Update a product by ID
+//5. Delete a product by ID
+
+//1. Get all products
+export const getAllProducts = async (req, res) => {
+    try{
+        const product = await Product.find();
+        res.status(200).json(product);
+    }catch(err){
+        console.log(err);
+        res.status(500).json({error: err.message});
+    }
+}
+
+//2. Get all products by ID
+export const getProductByID = async (req, res) => {
+    try{
+        const product = await Product.findById(req.params.id);
+        if(!product) return res.status(404).json({error : "Product was not found"});
+        res.status(200).json(product);
+    }catch(err){
+        console.log(err);
+        res.status(500).json({error: err.message});
+    }
+}
+
+//3. Create a product
+export const createProduct = async (req, res) => {
+    try{
+        const product = new Product(req.body);
+        await product.save();
+        res.status(201).json(product);
+    }catch(err){
+        console.log(err);
+        res.status(500).json({error: err.message});
+    }
+}
+//4. Update a product by ID
+export const updateProductByID = async (req, res) => {
+    try{
+        const product = await Product.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            {new : true , runvalidators: true});
+            if(!product) return res.status(404).json({error: "The product was not found"});
+            res.status(200).json(product);
+    }catch(err){
+        console.log(err);
+        res.status(500).json({error: err.message});
+    }
+}
