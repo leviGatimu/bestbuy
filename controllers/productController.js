@@ -47,8 +47,20 @@ export const updateProductByID = async (req, res) => {
             req.params.id,
             req.body,
             {new : true , runvalidators: true});
-            if(!product) return res.status(404).json({error: "The product was not found"});
+            if(!product) return res.status(404).json({error: "The product was not found."});
             res.status(200).json(product);
+    }catch(err){
+        console.log(err);
+        res.status(500).json({error: err.message});
+    }
+}
+
+//5. Delete a product by ID
+export const deleteByID = async (req, res) => {
+    try{
+        const product = await Product.findByIdAndDelete(req.params.id);
+        if(!product) return res.status(404).json({error: "The product wqas not found."});
+        res.status(200).json({message : "The product selected was deleted."});
     }catch(err){
         console.log(err);
         res.status(500).json({error: err.message});
