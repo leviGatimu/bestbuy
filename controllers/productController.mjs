@@ -21,7 +21,7 @@ export const getAllProducts = async (req, res) => {
 export const getUserByID = async(req, res) => {
     try{
         const product = await Products.findById(req.params.id);
-        if(!product) return res.status(404).json({message : "User not found."});
+        if(!product) return res.status(404).json({message : "Product not found."});
         res.status(200).json(product);
     }catch(err){
         console.log(err);
@@ -62,6 +62,9 @@ export const deleteProduct = async (req, res) => {
         const product = Products.findByIdAndDelete(req.params.id);
         if(!product) return res.status(404).json({message : "Product not found."});
         res.status(200).json(deleteProduct);
+    }catch(err){
+        console.log(err);
+        res.status(500).json({error : err.message});
     }
 }
 
