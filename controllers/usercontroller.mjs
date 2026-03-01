@@ -1,3 +1,4 @@
+import e from 'express';
 import User from '../models/user.js';
 //CRUD: 
 // Create (post) : No ID needed
@@ -5,3 +6,55 @@ import User from '../models/user.js';
 // Update : Using ID
 // Delete : Using ID
 
+export const createUser = async(req, res) => {
+    try{
+        const user = new User(req.body);
+        await user.save()
+        res.json(user);
+    }catch(err){
+        console.log(err);
+        process.exit(1);
+    }
+}
+
+export const getAllUsers = async (req, res) => {
+    try{
+        const user = await User.find();
+        res.json(user);
+    }catch(err){
+        console.log(err);
+        process.exit(1);
+    }
+}
+export const getUserByID = async (req, res) => {
+    try{
+        const user = await User.findById(req.params.id);
+        if(!user) return res.status(404).json({error : "User not found"});
+        res.json(user);
+    }catch(err){
+        console.log(err);
+        process.exit(1);
+    }
+}
+
+export const updateUser = async(req, res) => {
+    try{
+        const user = await User.findByIdAndUpdate(req.params.id,req.body,{new : true , runvalidators: true});
+        if(!user) return res.status(404).json({error : "User not found"});
+        res.json(user);
+    }catch(err){
+        console.log(err);
+        process.exit(1);
+    }
+}
+
+export const deleteUser = async (req, res) => {
+    try{
+        const user = await User.findByIdAndDelete(req.params.id);
+        if(!user) return res.status(404).json({error: "User not found"});
+        res.json(user);
+    }catch(err){
+    console.log(err);
+    process.exit(1);    
+    }
+}
