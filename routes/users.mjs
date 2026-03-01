@@ -11,9 +11,9 @@ import express from 'express';
 const router = express.Router();
 
 router.get('/', getAllUsers);
-router.get('/', getUserByID);
+router.get('/:id', getUserByID);
 router.post('/', createUser);
-router.put('/', updateUser);
-router.delete('/', deleteUser);
+router.put('/:id', updateUser);
+router.delete('/:id', deleteUser);
 
 export default router;
