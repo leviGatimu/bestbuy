@@ -1,4 +1,3 @@
-import mongoose from 'mongoose';
 import Products from '../models/products.js';
 
 //1. Get all products
