@@ -21,7 +21,7 @@ export const getAllProducts = async (req, res) => {
 export const getProductByID = async (req, res) => {
     try{
         const product = await Product.findById(req.params.id);
-        if(!product) return res.status(404).json({error : "Product was not found"});
+        if(!product) return res.status(404).json({message : "Product was not found"});
         res.status(200).json(product);
     }catch(err){
         console.log(err);
@@ -47,7 +47,7 @@ export const updateProductByID = async (req, res) => {
             req.params.id,
             req.body,
             {new : true , runvalidators: true});
-            if(!product) return res.status(404).json({error: "The product was not found."});
+            if(!product) return res.status(404).json({message: "The product was not found."});
             res.status(200).json(product);
     }catch(err){
         console.log(err);
@@ -59,7 +59,7 @@ export const updateProductByID = async (req, res) => {
 export const deleteProduct = async (req, res) => {
     try{
         const product = await Product.findByIdAndDelete(req.params.id);
-        if(!product) return res.status(404).json({error: "The product wqas not found."});
+        if(!product) return res.status(404).json({message: "The product wqas not found."});
         res.status(200).json({message : "The product selected was deleted."});
     }catch(err){
         console.log(err);
