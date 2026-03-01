@@ -6,7 +6,7 @@ import userRoutes from './routes/users.mjs';
 const app = express();
 const PORT = 3000;
 
-app.use('/user', userRoutes);
+app.use('/users', userRoutes);
 app.use(bodyParser.json());
 
 app.get('/', (req,res)=>{
