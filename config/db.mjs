@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const connectDB = async () => {
   try{
-    await mongoose.connect("mongodb://localhost:27017/bestbuy");
+    await mongoose.connect(process.env.MONGO_URI);
     console.log("Mongoose is running succesfully ✅");
   }catch(err){
     console.log(err);
