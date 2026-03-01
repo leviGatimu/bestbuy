@@ -1,9 +1,9 @@
 import express from "express";
 import bodyParser from "body-parser";
 import userRoutes from "./routes/users.mjs";
-import DBconnect from "./config/db.mjs";
+import connectDB from "./config/db.mjs";
 
-DBconnect();
+connectDB();
 
 const app = express();
 const port = 3000;
