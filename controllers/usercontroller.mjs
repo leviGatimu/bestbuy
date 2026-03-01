@@ -1,7 +1,42 @@
 import User from '../models/user.js';
 
+//CRUD: 
+// Create (post) : No ID needed
+// Read : By ID or all users (No ID needed)
+// Update : Using ID
+// Delete : Using ID
+
+//Create user
+export const createUser = async (req, res) => {
+    try{
+        const user = new User(req.body);
+        await user.save();
+        res.status(200).json(user);
+    }catch(err){
+        console.log(err);
+        process.exit(1);
+    }
+}
+
+//Get all users
 export const getAllusers = async (req, res) => {
     try{
-        const user = await Us
+        const user = await User.find()
+        res.status(200).json(user);
+    }catch(err){
+        console.log(err);
+        process.exit(1);
+    }
+}
+
+//Get user by ID
+export const getUserByID = async (req, res) => {
+    try{
+        const user = await User.findById(req.params.id);
+        if(!user) return res.status(404).json({err : "User not found ❌."});
+        res.status(200).json(user);
+    }catch(err){
+        console.log(err);
+        process.exit(1);
     }
 }
