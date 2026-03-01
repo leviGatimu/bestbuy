@@ -40,3 +40,30 @@ export const getUserByID = async (req, res) => {
         process.exit(1);
     }
 }
+
+//Update User
+export const updateUser = async (req, res) => {
+    try{
+        const user = await User.fidnByIdAndUpdate(
+            req.params.id,
+            req.body,
+            {new : true , runvalidators: true});
+            if(!user) return req.status(404).json({error : "User not found"});
+            res.json(user);
+    }catch(err){
+        console.log(err);
+        process.exit(1);
+    }
+}
+
+//Delete User 
+export const deleteUser = async (req, res) => {
+    try{
+        const user = await User.findbyIdAndDelete(req.params.id);
+        if(!user) return res.status(404).json("User not found.");
+        res.status(200).json({message : "User succesfully deleted"});
+    }catch(err){
+        console.log(err);
+        process.exit(1);
+    }
+}
