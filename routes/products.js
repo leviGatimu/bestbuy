@@ -4,7 +4,7 @@ import {
     createProduct,
     updateProductByID,
     deleteProduct
-} from '../controllers/productController';
+} from '../controllers/productController.mjs';
 
 import express from 'express';
 
