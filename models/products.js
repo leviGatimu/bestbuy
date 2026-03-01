@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const userSchema = new mongoose.Schema({
+const productSchema = new mongoose.Schema({
     name : {
         type : String,
         required : true,
@@ -9,6 +9,27 @@ const userSchema = new mongoose.Schema({
     description : {
         type : String, 
         default: "",
-        
+    },
+    price : {
+        type: Number, 
+        required : true,
+        min : 0
+    },
+    category : {
+        type : String, 
+        required : true
+    },
+    stock : {
+        type : Number, 
+        default : 0
+    },
+    image : {
+        type : String , 
+        default : ""
     }
-})
+    
+},{
+    timestamps: true
+});
+
+const User = mongoose.model("Products", productSchema);
