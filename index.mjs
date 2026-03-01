@@ -9,7 +9,7 @@ const PORT = 3000;
 app.use('/user', userRoutes);
 app.use(bodyParser.json());
 
-app.get('/', ()=>{
+app.get('/', (req,res)=>{
   res.send("Hello from homepage");
 });
 
