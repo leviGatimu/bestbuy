@@ -5,7 +5,6 @@ import userRoutes from './routes/users.mjs';
 
 dotenv.config();
 const app = express();
-const PORT = 3000;
 
 app.use('/users', userRoutes);
 app.use(bodyParser.json());
@@ -14,4 +13,4 @@ app.get('/', (req,res)=>{
   res.send("Hello from homepage");
 });
 
-app.listen(PORT , ()=> console.log(`Server succesfully running on port : http://localhost:${PORT}`));
+app.listen(process.env.PORT , ()=> console.log(`Server succesfully running on port : http://localhost:${PORT}`));
