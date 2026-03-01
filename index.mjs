@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import productsRoutes from './routes/users.mjs';
 import connectDB from './config/db.mjs';
 
+connectDB()
 dotenv.config();
 const app = express();
 
