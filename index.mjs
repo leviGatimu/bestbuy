@@ -3,7 +3,6 @@ import bodyParser from 'body-parser';
 import userRoutes from './routes/users.mjs';
 import productsRoutes from './routes/products.js';
 import connectDB from './config/db.mjs';
-import { userData } from 'three/tsl';
 
 connectDB();
 
@@ -11,7 +10,7 @@ const app = express();
 const PORT = 3000;
 
 app.use('/users', userRoutes);
-app.use('/users', productsRoutes);
+app.use('/products', productsRoutes);
 app.use(bodyParser.json());
 
 
