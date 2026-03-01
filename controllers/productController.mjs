@@ -1,4 +1,4 @@
-import Product from './productController.mjs';
+import Product from '../models/products.js';
 
 //1. Get all products
 //2. Get all products by ID
