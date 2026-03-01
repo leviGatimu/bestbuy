@@ -56,6 +56,13 @@ export const updateProduct = async(req, res) => {
 }
 }
 
+//5. Delete a product by ID
+export const deleteProduct = async (req, res) => {
+    try{
+        const product = Products.findByIdAndDelete()
+    }
+}
+
 
 
 
