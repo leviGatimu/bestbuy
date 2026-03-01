@@ -13,7 +13,7 @@ const router = express.Router();
 router.get('/', getAllusers);
 router.get('/:id', getUserByID);
 router.post('/', createUser);
-router.put('/', updateUser);
-router.delete('/', deleteUser);
+router.put('/:id', updateUser);
+router.delete('/:id', deleteUser);
 
 export default router;
