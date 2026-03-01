@@ -47,7 +47,7 @@ export const updateProductByID = async (req, res) => {
         const product = await Product.findByIdAndUpdate(
             req.params.id,
             req.body,
-            {new : true , runvalidators: true});
+            {new : true , runValidators: true});
             if(!product) return res.status(404).json({message: "The product was not found."});
             res.status(200).json(product);
     }catch(err){
