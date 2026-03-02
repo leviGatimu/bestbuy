@@ -10,6 +10,7 @@ const app = express();
 
 app.use('/products', productsRoutes);
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req,res)=>{
   res.send("Hello from homepage");
