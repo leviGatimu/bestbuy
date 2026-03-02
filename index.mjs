@@ -15,4 +15,4 @@ app.get('/', (req,res)=>{
   res.send("Hello from homepage");
 });
 
-app.listen(process.env.PORT , ()=> console.log(`Server succesfully running on port : http://localhost:${PORT}`));
+app.listen(process.env.PORT , ()=> console.log(`Server succesfully running on port : http://localhost:${process.env.PORT}`));
