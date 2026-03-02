@@ -11,13 +11,13 @@ connectDB();
 dotenv.config();
 const app = express();
 
-
+app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
 app.use('/login', authRoutes);
 app.use('/register', authRoutes);
 app.use('/products', productsRoutes);
 app.use('/users', userRoutes);
-app.use(bodyParser.json());
-app.use(express.urlencoded({ extended: true }));
+
 
 app.get('/', (req,res)=>{
   res.send("Welcome to BestBuy");
