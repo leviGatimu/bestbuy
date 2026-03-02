@@ -17,7 +17,11 @@ export const register = async (req, res) => {
             email, 
             password: hashedPass
         });
-       const token = jwt.sign({id:createdUser._id} , process.env.JWT_SECRET, {expiresIn : "7d"});
+      const token = jwt.sign(
+        {id: createdUser._id},
+        process.env.JWT_SECRET,
+        {expiresIn : "7d"}
+      );
 
     }
 }
