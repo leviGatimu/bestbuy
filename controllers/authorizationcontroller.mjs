@@ -6,12 +6,13 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export const register = async (req, res) => {
+    console.log("✅ HIT REGISTER");
   try {
     const { name, email, password } = req.body;
 
     const existing = await User.findOne({ email });
     if (existing) {
-     res.status(409).json({ error: "User already exists. Please login." });
+      return res.status(409).json({ error: "User already exists. Please login." });
     }
 
     const hashedPass = await bcrypt.hash(password, 10);
