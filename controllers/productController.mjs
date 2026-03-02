@@ -32,6 +32,8 @@ export const getProductByID = async(req, res) => {
 //3. Create a product
 export const createProduct = async (req, res) => {
   try {
+    console.log("✅ createProduct HIT");
+    console.log("BODY:", req.body);
     const product = await Products.create({
       ...req.body,
       image: req.file ? req.file.filename : ""
