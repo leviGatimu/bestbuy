@@ -73,22 +73,55 @@
     Browse our latest supermarket items
   </p>
 </section>
-<section>
-<div class="flex items-center space-x-3 mt-6 mb-5 mx-40">
-<button class="text-center bg-blue-500 p-5 px-20 mx-5 rounded text-2xl font-bold text-white">
-    Sort
-</button>
-<button class="text-center bg-blue-500 p-5 px-20 mx-5 rounded text-2xl font-bold text-white">
-    Genre
-</button>
-<button class="text-center bg-blue-500 p-5 px-20 mx-5 rounded text-2xl font-bold text-white">
-    Price
-</button>
-<button class="text-center bg-blue-500 p-5 px-20 mx-5 rounded text-2xl font-bold text-white hover:bg-blue-400">
-    Filter
-</button>
-</div>
-    
+<section class="mt-10">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex flex-wrap gap-6 justify-center">
+
+      <div class="relative group">
+        <button class="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-blue-500 transition">
+          Sort
+        </button>
+        <div class="absolute hidden group-hover:block mt-2 w-48 bg-white rounded-lg shadow-lg overflow-hidden z-10">
+          <a href="#" class="block px-4 py-3 hover:bg-gray-100 text-gray-700">Newest</a>
+          <a href="#" class="block px-4 py-3 hover:bg-gray-100 text-gray-700">Oldest</a>
+          <a href="#" class="block px-4 py-3 hover:bg-gray-100 text-gray-700">Popular</a>
+        </div>
+      </div>
+
+      <div class="relative group">
+        <button class="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-blue-500 transition">
+          Genre
+        </button>
+        <div class="absolute hidden group-hover:block mt-2 w-48 bg-white rounded-lg shadow-lg overflow-hidden z-10">
+          <a href="#" class="block px-4 py-3 hover:bg-gray-100 text-gray-700">Electronics</a>
+          <a href="#" class="block px-4 py-3 hover:bg-gray-100 text-gray-700">Appliances</a>
+          <a href="#" class="block px-4 py-3 hover:bg-gray-100 text-gray-700">Accessories</a>
+        </div>
+      </div>
+
+      <div class="relative group">
+        <button class="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-blue-500 transition">
+          Price
+        </button>
+        <div class="absolute hidden group-hover:block mt-2 w-48 bg-white rounded-lg shadow-lg overflow-hidden z-10">
+          <a href="#" class="block px-4 py-3 hover:bg-gray-100 text-gray-700">Low to High</a>
+          <a href="#" class="block px-4 py-3 hover:bg-gray-100 text-gray-700">High to Low</a>
+        </div>
+      </div>
+
+      <div class="relative group">
+        <button class="bg-yellow-400 text-blue-900 px-8 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-yellow-300 transition">
+          Filter
+        </button>
+        <div class="absolute hidden group-hover:block mt-2 w-48 bg-white rounded-lg shadow-lg overflow-hidden z-10">
+          <a href="#" class="block px-4 py-3 hover:bg-gray-100 text-gray-700">In Stock</a>
+          <a href="#" class="block px-4 py-3 hover:bg-gray-100 text-gray-700">Out of Stock</a>
+          <a href="#" class="block px-4 py-3 hover:bg-gray-100 text-gray-700">On Sale</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 </body>
 </html>
