@@ -21,6 +21,25 @@ export const register = async(req, res) => {
             {id: createdUser._id}, 
             process.env.JWT_SECRET,
             {expiresIn : "7d"}
-        )
+        );
+        res.json({createdUser , token});
+    }catch(err){
+        res.status(500).json({error: err.message})   
+        }
+}
+
+export const login = async(req, res) => {
+    try{
+        const {email , password} = req.body;
+        const user = await User.findOne({email});
+        if(!user) return res.json({error: "Invalid credentials"});
+        const passMatch = bcrypt.compare(password, user.password);
+        if(!passMatch) return res.json({error: "Invalid credentials"});
+        const token = jwt.sign(
+            {id: user._id},
+            process.env.JWT_SECRET,
+            {expiresIn: "7d"}
+        );
+        res.json({user , token});
     }
 }
