@@ -2,7 +2,6 @@ import User from '../models/usermodel.js';
 import dotenv from 'dotenv';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import { use } from 'react';
 
 dotenv.config();
 
@@ -17,9 +16,9 @@ export const register = async (req, res) => {
             name, 
             email, 
             password: hashedPass
-        })l
+        });
         const token = jwt.sign(
-            {id: user._id},
+            {id: usercreated._id},
             process.env.JWT_SECRET,
             {expiresIn : "7d"}
         );
