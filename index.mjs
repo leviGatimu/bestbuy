@@ -8,7 +8,7 @@ connectDB();
 dotenv.config();
 const app = express();
 
-app.use('/users', userRoutes);
+app.use('/products', productsRoutes);
 app.use(bodyParser.json());
 
 app.get('/', (req,res)=>{
