@@ -1,0 +1,25 @@
+info:
+  name: register
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:3000/register
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Test product 4",
+        "description": "abc",
+        "price": 100,
+        "category": "Phones",
+        "stock": 50
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

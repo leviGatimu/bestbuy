@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import productsRoutes from './routes/usersrouter.mjs';
 import connectDB from './config/db.mjs';
 import authRoutes from './routes/authrouter.js';
+import userRoutes from  './routes/usersrouter.mjs';
 
 
 connectDB();
