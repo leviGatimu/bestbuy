@@ -1,5 +1,5 @@
 info:
-  name: register2
+  name: register
   type: http
   seq: 5
 
@@ -10,8 +10,8 @@ http:
     type: json
     data: |-
       {
-        "name": "Ineza Orianne Caela",
-        "email" : "caela@gmail.com",
+        "name": "Alpha Mugisha Mpore",
+        "email" : "tigerkev07@gmail.com",
         "password": "123"
       }
   auth: inherit
