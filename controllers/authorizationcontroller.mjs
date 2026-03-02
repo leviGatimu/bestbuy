@@ -41,5 +41,7 @@ export const login = async(req, res) => {
             {expiresIn: "7d"}
         );
         res.json({user , token});
+    }catch(err){
+        res.satus(404).json({error: err.message});
     }
 }
