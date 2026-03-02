@@ -13,8 +13,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/login', authRoutes);
-app.use('/register', authRoutes);
+app.use('/auth', authRoutes);
 app.use('/products', productsRoutes);
 app.use('/users', userRoutes);
 
