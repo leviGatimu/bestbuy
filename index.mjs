@@ -1,9 +1,9 @@
 import dotenv from "dotenv";
 import express from 'express';
 import bodyParser from 'body-parser';
-import productsRoutes from './routes/users.mjs';
+import productsRoutes from './routes/usersrouter.mjs';
 import connectDB from './config/db.mjs';
-import authRoutes from './routes/auth.js';
+import authRoutes from './routes/authrouter.js';
 
 
 connectDB();
