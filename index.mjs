@@ -3,11 +3,16 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import productsRoutes from './routes/users.mjs';
 import connectDB from './config/db.mjs';
+import authRoutes from './routes/auth.js';
+
 
 connectDB();
 dotenv.config();
 const app = express();
 
+
+app.use('/login', authRoutes);
+app.use('/register', authRoutes);
 app.use('/products', productsRoutes);
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
