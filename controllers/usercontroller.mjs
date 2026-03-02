@@ -1,4 +1,4 @@
-import User from '../models/user.js';
+import User from '../models/usermodel.js';
 //CRUD: 
 // Create (post) : No ID needed
 // Read : By ID or all users (No ID needed)
