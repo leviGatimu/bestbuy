@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req,res)=>{
-  res.send("Hello from homepage");
+  res.send("Welcome to BestBuy");
 });
 
 app.listen(process.env.PORT , ()=> console.log(`Server succesfully running on port : http://localhost:${process.env.PORT}`));
