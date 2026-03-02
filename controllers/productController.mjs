@@ -30,16 +30,17 @@ export const getProductByID = async(req, res) => {
 }
 
 //3. Create a product
-export const createProduct = async(req, res) => {
-    try{
-        const product = new Products(req.body);
-        await product.save();
-        res.status(201).json(product);
-        console.log(req.file);
-    }catch(err){
-        console.log(err);
-        res.status(500).json({error : err.message});
-}
+export const createProduct = async (req, res) => {
+  try {
+    const product = await Products.create({
+      ...req.body,
+      image: req.file ? req.file.filename : ""
+    });
+
+    res.status(201).json(product);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 }
 
 //4. Update a product by ID
