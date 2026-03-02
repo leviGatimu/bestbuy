@@ -7,7 +7,7 @@ import { use } from 'react';
 dotenv.config();
 
 
-export const register = async (res, req) => {
+export const register = async (req, res) => {
     try{
         const {name , email , password} = req.body;
         const user = await User.findOne({email});
