@@ -4,12 +4,15 @@ import productsRoutes from './routes/usersrouter.mjs';
 import connectDB from './config/db.mjs';
 import authRoutes from './routes/authrouter.js';
 import userRoutes from  './routes/usersrouter.mjs';
+import cors from "cors";
+
 
 
 connectDB();
 dotenv.config();
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/auth', authRoutes);

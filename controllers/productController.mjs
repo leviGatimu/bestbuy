@@ -1,4 +1,4 @@
-import Products from '../models/products.js';
+import Products from '../models/productsmodel.js';
 
 //1. Get all products
 //2. Get all products by ID
@@ -41,6 +41,7 @@ export const createProduct = async (req, res) => {
 
     res.status(201).json(product);
   } catch (err) {
+     console.log(err);
     res.status(500).json({ error: err.message });
   }
 }
