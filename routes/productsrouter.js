@@ -1,4 +1,4 @@
-import { upload } from "../config/multer.js"; 
+import { upload } from "../config/multer.js";
 import {
     getAllProducts,
     getProductByID,
@@ -12,7 +12,7 @@ const router = express.Router()
 
 router.get('/', getAllProducts);
 router.get('/:id', getProductByID);
-router.post('/', createProduct, upload.single("image"));
+router.post("/", upload.single("image"), createProduct);
 router.put('/:id', updateProduct);
 router.delete('/:id', deleteProduct);
 

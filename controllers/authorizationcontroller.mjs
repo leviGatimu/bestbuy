@@ -1,4 +1,4 @@
-import User from '../controllers/usercontroller';
+import User from '../models/usermodel.js';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
