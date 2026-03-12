@@ -19,3 +19,10 @@ build/**
 *.swo
 .DS_Store
 Thumbs.db
+folder.yml
+opencollector.yml
+assignment_products_crud.pdf
+Get all users.yml
+login.yml
+opencollector.yml
+register.yml

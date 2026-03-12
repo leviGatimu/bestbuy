@@ -31,6 +31,7 @@ export const getProductByID = async(req, res) => {
 
 //3. Create a product
 export const createProduct = async (req, res) => {
+    console.log(req.body);
   try {
     console.log("✅ createProduct HIT");
     console.log("BODY:", req.body);
